@@ -81,7 +81,7 @@ class query_jobs_class:
     blank = Queue_item('','','','','','','','','','','')
  
     def __init__(self):
-        self.config_path = r'C:\dp_RAIS_load_config.xml'
+        self.config_path = r'dp_RAIS_load_config.xml'
         self.config_tree, self.config_root = self.read_xml_file(self.config_path)
         self.num_tasks = int(self.find_tag(self.config_tree, 'Num_tasks')[2])
         self.task_burst = int(self.find_tag(self.config_tree, 'Task_burst')[2])
