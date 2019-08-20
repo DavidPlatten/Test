@@ -95,9 +95,9 @@ class query_jobs_class:
 
         
         #self.conn = pyodbc.connect("Driver={SQL Server Native Client 11.0};"
-                                   "Server=" + self.server_name + ";"
-                                   "Database=" + self.database_name + ";"
-                                   "Trusted_Connection=yes;")
+        #                           "Server=" + self.server_name + ";"
+        #                           "Database=" + self.database_name + ";"
+        #                           "Trusted_Connection=yes;")
         
         #self.conn.setdecoding(pyodbc.SQL_CHAR, encoding='utf-8')
         #self.conn.setdecoding(pyodbc.SQL_WCHAR, encoding='utf-8')
