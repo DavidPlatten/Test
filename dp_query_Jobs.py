@@ -191,7 +191,9 @@ class query_jobs_class:
         #for row in self.cursor:
         #    if row:
         #        num_jobs = int(str(row)[1:-3])
-                
+        
+        row = "THIS IS A TEST ROW........"
+        
         self.pnl.pnl("")
         self.pnl.pnl("                     Tasks in Jobs table: " + str(row)[1:-3] + "                                                  Snapshot every : " + self.snapshot_time + " seconds")
         self.pnl.pnl("")
