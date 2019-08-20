@@ -94,16 +94,16 @@ class query_jobs_class:
         self.run_time = int(self.find_tag(self.config_tree, 'Run_Time')[2])        
 
         
-        self.conn = pyodbc.connect("Driver={SQL Server Native Client 11.0};"
+        #self.conn = pyodbc.connect("Driver={SQL Server Native Client 11.0};"
                                    "Server=" + self.server_name + ";"
                                    "Database=" + self.database_name + ";"
                                    "Trusted_Connection=yes;")
         
-        self.conn.setdecoding(pyodbc.SQL_CHAR, encoding='utf-8')
-        self.conn.setdecoding(pyodbc.SQL_WCHAR, encoding='utf-8')
-        self.conn.setencoding(encoding='utf-8')
+        #self.conn.setdecoding(pyodbc.SQL_CHAR, encoding='utf-8')
+        #self.conn.setdecoding(pyodbc.SQL_WCHAR, encoding='utf-8')
+        #self.conn.setencoding(encoding='utf-8')
         
-        self.cursor = self.conn.cursor()
+        #self.cursor = self.conn.cursor()
         self.fastlane = []
         self.high = []
         self.medium = []
@@ -187,10 +187,10 @@ class query_jobs_class:
 
         self.pnl.pnl(today)
         num_jobs = 0
-        self.cursor.execute('SELECT COUNT([TaskTitle]) FROM Jobs')
-        for row in self.cursor:
-            if row:
-                num_jobs = int(str(row)[1:-3])
+        #self.cursor.execute('SELECT COUNT([TaskTitle]) FROM Jobs')
+        #for row in self.cursor:
+        #    if row:
+        #        num_jobs = int(str(row)[1:-3])
                 
         self.pnl.pnl("")
         self.pnl.pnl("                     Tasks in Jobs table: " + str(row)[1:-3] + "                                                  Snapshot every : " + self.snapshot_time + " seconds")
@@ -216,9 +216,9 @@ class query_jobs_class:
                         tp.[DaysFromBaseline]
                         FROM Jobs j INNER JOIN [TimePoint] tp on j.TimePointId = tp.TimePointId"""
             
-            self.cursor.execute(sql_cmd)
-            for row in self.cursor:
-                self.process_row(row)
+            #self.cursor.execute(sql_cmd)
+            #for row in self.cursor:
+            #    self.process_row(row)
 
 
         self.sort_queues()                    
